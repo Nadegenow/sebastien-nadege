@@ -86,6 +86,64 @@
             animation: drawHeart 2s linear infinite;
         }
     </style>
+    .timeline {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    background-color: #6B8E23;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    margin: 20px 0;
+    position: relative;
+}
+
+.timeline-date {
+    flex: 1;
+    text-align: right;
+    padding-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6B8E23;
+}
+
+.timeline-content {
+    flex: 3;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: #6B8E23;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #6B8E23;
+    transform: translateX(-50%);
+}
 </head>
 <body>
     <header>
@@ -138,6 +196,46 @@
         <h2>Quel est le programme ?</h2>
         <p>Programme détaillé de l'événement.</p>
     </section>
+    <section id="programme">
+    <h2>Quel est le programme ?</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-date">10:00</div>
+            <div class="timeline-content">
+                <h3>Accueil</h3>
+                <p>Arrivée et accueil des invités.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">12:00</div>
+            <div class="timeline-content">
+                <h3>Cérémonie</h3>
+                <p>Début de la cérémonie de mariage.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">14:00</div>
+            <div class="timeline-content">
+                <h3>Déjeuner</h3>
+                <p>Déjeuner servi au jardin.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">17:00</div>
+            <div class="timeline-content">
+                <h3>Activités et jeux</h3>
+                <p>Jeux et activités pour tous les âges.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">20:00</div>
+            <div class="timeline-content">
+                <h3>Dîner et soirée dansante</h3>
+                <p>Dîner suivi d'une soirée dansante.</p>
+            </div>
+        </div>
+    </div>
+</section>
     
     <section id="merci">
         <h2>Merci !</h2>
