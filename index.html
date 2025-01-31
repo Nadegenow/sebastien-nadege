@@ -314,18 +314,20 @@
     </footer>
 
     <script>
-        // JavaScript pour ajouter la classe d'animation à la section "Comment s'y rendre"
+        // JavaScript pour ajouter la classe d'animation à la section "Comment s'y rendre" avec IntersectionObserver
         document.addEventListener("DOMContentLoaded", function() {
             const targetSection = document.querySelector("#comment-s-y-rendre");
-            const navLink = document.querySelector(".nav-link");
 
-            navLink.addEventListener("click", function(event) {
-                event.preventDefault();
-                targetSection.scrollIntoView({ behavior: "smooth" });
-                setTimeout(() => {
-                    targetSection.classList.add("zoom-out");
-                }, 500); // Ajout d'un délai pour que le défilement se termine avant l'animation
-            });
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("zoom-out");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 }); // Déclenche l'animation lorsque 50% de la section est visible
+
+            observer.observe(targetSection);
         });
     </script>
 </body>
