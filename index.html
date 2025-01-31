@@ -146,6 +146,22 @@
             box-shadow: 0 0 0 2px #6B8E23;
             transform: translateX(-50%);
         }
+
+        /* Animation de zoom out */
+        @keyframes zoomOut {
+            from {
+                transform: scale(1.2);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .zoom-out {
+            animation: zoomOut 0.5s ease-out forwards;
+        }
     </style>
 </head>
 <body>
@@ -159,7 +175,7 @@
     </header>
     <nav>
         <a href="#save-the-date">Save the date</a>
-        <a href="#comment-s-y-rendre">Comment s'y rendre ?</a>
+        <a href="#comment-s-y-rendre" class="nav-link">Comment s'y rendre ?</a>
         <a href="#ou-se-loger">Où se loger ?</a>
         <a href="#programme">Quel est le programme du week-end ?</a>
         <a href="#merci">Merci !</a>
@@ -296,5 +312,19 @@
         <p><a href="https://lydia-app.com" target="_blank" style="color: white;">Contribuez à la cagnotte Lydia</a></p>
         <p>&copy; 2025 Sébastien & Nadège</p>
     </footer>
+
+    <script>
+        // JavaScript pour ajouter la classe d'animation à la section "Comment s'y rendre"
+        document.addEventListener("DOMContentLoaded", function() {
+            const targetSection = document.querySelector("#comment-s-y-rendre");
+            const navLink = document.querySelector(".nav-link");
+
+            navLink.addEventListener("click", function(event) {
+                event.preventDefault();
+                targetSection.scrollIntoView({ behavior: "smooth" });
+                targetSection.classList.add("zoom-out");
+            });
+        });
+    </script>
 </body>
 </html>
