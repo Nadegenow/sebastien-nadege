@@ -85,8 +85,67 @@
             fill: none;
             animation: drawHeart 2s linear infinite;
         }
+
+        /* Styles pour la timeline */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            background-color: #6B8E23;
+            top: 0;
+            bottom: 0;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .timeline-date {
+            flex: 1;
+            text-align: right;
+            padding-right: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #6B8E23;
+        }
+
+        .timeline-content {
+            flex: 3;
+            padding: 10px 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: #6B8E23;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px #6B8E23;
+            transform: translateX(-50%);
+        }
     </style>
-   }
 </head>
 <body>
     <header>
@@ -111,24 +170,24 @@
         <p>Notez bien la date ! Plus d'infos à venir.</p>
     </section>
     
-       
-      <section id="comment-s-y-rendre">
-    <h2>Comment s'y rendre ?</h2>
-    <p>Voici l'emplacement de la Country House La Bursch en Italie :</p>
-    
-    <!-- Intégration Google Maps -->
-    <div style="width: 100%; height: 450px;">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1427775.2285927068!2d6.683933838276473!3d45.658382271077755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4788a1d4ca5149bf%3A0x9566ddc09eb142a!2sLa%20Bursch%20Country%20House!5e0!3m2!1sfr!2sfr!4v1737975809248!5m2!1sfr!2sfr" 
-            width="100%" 
-            height="450" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </div>
-</section>
+    <section id="comment-s-y-rendre">
+        <h2>Comment s'y rendre ?</h2>
+        <p>Voici l'emplacement de la Country House La Bursch en Italie :</p>
+        
+        <!-- Intégration Google Maps -->
+        <div style="width: 100%; height: 400px;">
+            <iframe 
+                width="100%" 
+                height="400" 
+                frameborder="0" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.8339618583673!2d7.872128076282373!3d45.62581492673732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478956b8a33923[...]
+            </iframe>
+        </div>
+    </section>
     
     <section id="ou-se-loger">
         <h2>Où se loger ?</h2>
@@ -137,48 +196,44 @@
     
     <section id="programme">
         <h2>Quel est le programme ?</h2>
-        <p>Programme détaillé de l'événement.</p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">10:00</div>
+                <div class="timeline-content">
+                    <h3>Accueil</h3>
+                    <p>Arrivée et accueil des invités.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">12:00</div>
+                <div class="timeline-content">
+                    <h3>Cérémonie</h3>
+                    <p>Début de la cérémonie de mariage.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">14:00</div>
+                <div class="timeline-content">
+                    <h3>Déjeuner</h3>
+                    <p>Déjeuner servi au jardin.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">17:00</div>
+                <div class="timeline-content">
+                    <h3>Activités et jeux</h3>
+                    <p>Jeux et activités pour tous les âges.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">20:00</div>
+                <div class="timeline-content">
+                    <h3>Dîner et soirée dansante</h3>
+                    <p>Dîner suivi d'une soirée dansante.</p>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="programme">
-    <h2>Quel est le programme ?</h2>
-    <div class="timeline">
-        <div class="timeline-item">
-            <div class="timeline-date">10:00</div>
-            <div class="timeline-content">
-                <h3>Accueil</h3>
-                <p>Arrivée et accueil des invités.</p>
-            </div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-date">12:00</div>
-            <div class="timeline-content">
-                <h3>Cérémonie</h3>
-                <p>Début de la cérémonie de mariage.</p>
-            </div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-date">14:00</div>
-            <div class="timeline-content">
-                <h3>Déjeuner</h3>
-                <p>Déjeuner servi au jardin.</p>
-            </div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-date">17:00</div>
-            <div class="timeline-content">
-                <h3>Activités et jeux</h3>
-                <p>Jeux et activités pour tous les âges.</p>
-            </div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-date">20:00</div>
-            <div class="timeline-content">
-                <h3>Dîner et soirée dansante</h3>
-                <p>Dîner suivi d'une soirée dansante.</p>
-            </div>
-        </div>
-    </div>
-</section>
     
     <section id="merci">
         <h2>Merci !</h2>
