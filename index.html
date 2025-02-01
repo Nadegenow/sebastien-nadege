@@ -167,6 +167,12 @@
         .hidden {
             opacity: 0;
         }
+
+        /* Style pour la carte Google */
+        #map {
+            width: 100%;
+            height: 400px;
+        }
     </style>
 </head>
 <body>
@@ -197,7 +203,7 @@
         <p>Voici l'emplacement de la Country House La Bursch en Italie :</p>
         
         <!-- Intégration Google Maps -->
-        <div id="map" style="width: 100%; height: 400px;"></div>
+        <div id="map"></div>
     </section>
     
     <section id="ou-se-loger">
@@ -337,7 +343,7 @@
             const bursch = { lat: 45.6258, lng: 7.8721 };
             // La carte, centrée sur La Bursch Country House
             const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 14,
+                zoom: 10, // Niveau de zoom dézoomé
                 center: bursch,
             });
             // Le marqueur, positionné à La Bursch Country House
