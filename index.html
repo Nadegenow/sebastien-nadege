@@ -162,6 +162,11 @@
         .zoom-out {
             animation: zoomOut 0.5s ease-out forwards;
         }
+
+        /* Cacher la section par défaut */
+        .hidden {
+            opacity: 0;
+        }
     </style>
 </head>
 <body>
@@ -187,7 +192,7 @@
         <p>Notez bien la date ! Plus d'infos à venir.</p>
     </section>
     
-    <section id="comment-s-y-rendre">
+    <section id="comment-s-y-rendre" class="hidden">
         <h2>Comment s'y rendre ?</h2>
         <p>Voici l'emplacement de la Country House La Bursch en Italie :</p>
         
@@ -314,7 +319,7 @@
     </footer>
 
     <script>
-        // JavaScript pour ajouter la classe d'animation à la section "Comment s'y rendre" avec IntersectionObserver
+        // JavaScript pour ajouter la classe d'animation à la section "Comment s'y rendre"
         document.addEventListener("DOMContentLoaded", function() {
             const targetSection = document.querySelector("#comment-s-y-rendre");
 
@@ -322,6 +327,7 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("zoom-out");
+                        entry.target.classList.remove("hidden");
                         observer.unobserve(entry.target);
                     }
                 });
