@@ -197,17 +197,7 @@
         <p>Voici l'emplacement de la Country House La Bursch en Italie :</p>
         
         <!-- Intégration Google Maps -->
-        <div style="width: 100%; height: 400px;">
-            <iframe 
-                width="100%" 
-                height="400" 
-                frameborder="0" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.8339618583673!2d7.872128076282373!3d45.62581492673732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478956b8a33923dd:0x1b3e6b7f3ed831b5!2sCountry%20House%20La%20Bursch!5e0!3m2!1sfr!2sit!4v1672523209749!5m2!1sfr!2sit"></iframe>
-        </div>
+        <div id="map" style="width: 100%; height: 400px;"></div>
     </section>
     
     <section id="ou-se-loger">
@@ -294,7 +284,12 @@
     
     <section id="infos">
         <h2>Infos complémentaires</h2>
-        <p>Autres détails utiles.</p>
+        <p>Vous pouvez trouver plusieurs sites touristiques remarquables dans les environs immédiats, notamment :</p>
+        <ul>
+            <li>Le <a href="https://www.oasizegna.com/en/places/san-bernardo-sanctuary-biella_21.html" target="_blank">Sanctuaire de Saint Bernard</a></li>
+            <li>D'autres attractions répertoriées sur <a href="https://www.atl.biella.it/" target="_blank">ATL Biella</a></li>
+            <li>Et encore plus sur <a href="https://www.fondazionebiellezza.it/" target="_blank">Fondazione Biellezza</a></li>
+        </ul>
     </section>
     
     <section class="contact-form">
@@ -335,6 +330,25 @@
 
             observer.observe(targetSection);
         });
+
+        // Initialiser et ajouter la carte
+        function initMap() {
+            // La position de La Bursch Country House
+            const bursch = { lat: 45.6258, lng: 7.8721 };
+            // La carte, centrée sur La Bursch Country House
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 14,
+                center: bursch,
+            });
+            // Le marqueur, positionné à La Bursch Country House
+            const marker = new google.maps.Marker({
+                position: bursch,
+                map: map,
+                title: "La Bursch Country House",
+            });
+        }
     </script>
+    <!-- Charger l'API JavaScript de Google Maps -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>
