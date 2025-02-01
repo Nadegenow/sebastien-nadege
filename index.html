@@ -200,7 +200,7 @@
     
     <section id="comment-s-y-rendre" class="hidden">
         <h2>Comment s'y rendre ?</h2>
-        <p>Voici l'emplacement de la Country House La Bursch en Italie :</p>
+        <p>L'ensemble du week-end se déroulera à la Country House de La Bursch dont voici le <a href="https://labursch.com/" target="_blank">lien</a>.</p>
         
         <!-- Intégration Google Maps -->
         <div id="map"></div>
@@ -343,14 +343,8 @@
             const bursch = { lat: 45.6258, lng: 7.8721 };
             // La carte, centrée sur La Bursch Country House
             const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 10, // Niveau de zoom dézoomé
+                zoom: 5, // Niveau de zoom dézoomé au maximum
                 center: bursch,
-            });
-            // Le marqueur, positionné à La Bursch Country House
-            const marker = new google.maps.Marker({
-                position: bursch,
-                map: map,
-                title: "La Bursch Country House",
             });
         }
     </script>
