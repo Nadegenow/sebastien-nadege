@@ -85,6 +85,44 @@
             fill: none;
             animation: drawHeart 2s linear infinite;
         }
+        /* Animation des lettres A M O R E */
+        @keyframes fly {
+            0% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(100px, -100px);
+                opacity: 0;
+            }
+        }
+        .letter {
+            display: inline-block;
+            font-size: 40px;
+            font-weight: 700;
+            position: absolute;
+            animation: fly 3s ease-in-out infinite;
+        }
+        .letter:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+        .letter:nth-child(2) {
+            left: 30%;
+            animation-delay: 0.5s;
+        }
+        .letter:nth-child(3) {
+            left: 50%;
+            animation-delay: 1s;
+        }
+        .letter:nth-child(4) {
+            left: 70%;
+            animation-delay: 1.5s;
+        }
+        .letter:nth-child(5) {
+            left: 90%;
+            animation-delay: 2s;
+        }
 
         /* Styles pour la timeline */
         .timeline {
