@@ -86,16 +86,16 @@
             animation: drawHeart 2s linear infinite;
         }
            
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+@import url('https://fonts.cdnfonts.com/css/about');
 
 /* Animation des lettres A M O R E */
 @keyframes fly {
     0% {
-        transform: translate(0, 0) rotate(0deg);
+        transform: translate(0, 100px) rotate(0deg); /* Départ plus bas */
         opacity: 1;
     }
     100% {
-        transform: translate(100px, -200px) rotate(360deg); /* Moins haut */
+        transform: translate(100px, -100px) rotate(360deg); /* Moins haut */
         opacity: 0;
     }
 }
@@ -105,9 +105,9 @@
     font-size: 40px;
     font-weight: 700;
     position: absolute;
-    top: 20px; /* Ajusté pour être moins haut */
+    top: 100px; /* Ajusté pour être plus bas */
     animation: fly 5s ease-in-out infinite; /* Animation plus lente */
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'About', sans-serif;
 }
 
 .letter:nth-child(1) {
