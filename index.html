@@ -86,44 +86,54 @@
             animation: drawHeart 2s linear infinite;
         }
            
-</div> /* Animation des lettres A M O R E */
-        @keyframes fly {
-            0% {
-                transform: translate(0, 0) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translate(100px, -100px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-        .letter {
-            display: inline-block;
-            font-size: 40px;
-            font-weight: 700;
-            position: absolute;
-            animation: fly 3s ease-in-out infinite;
-        }
-        .letter:nth-child(1) {
-            left: 10%;
-            animation-delay: 0s;
-        }
-        .letter:nth-child(2) {
-            left: 30%;
-            animation-delay: 0.5s;
-        }
-        .letter:nth-child(3) {
-            left: 50%;
-            animation-delay: 1s;
-        }
-        .letter:nth-child(4) {
-            left: 70%;
-            animation-delay: 1.5s;
-        }
-        .letter:nth-child(5) {
-            left: 90%;
-            animation-delay: 2s;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+/* Animation des lettres A M O R E */
+@keyframes fly {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100px, -300px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.letter {
+    display: inline-block;
+    font-size: 40px;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    animation: fly 5s ease-in-out infinite; /* Animation plus lente */
+    font-family: 'Poppins', sans-serif;
+}
+
+.letter:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.letter:nth-child(2) {
+    left: 35%; /* Modifié pour ne pas être aligné */
+    animation-delay: 1s; /* Modifié pour des délais différents */
+}
+
+.letter:nth-child(3) {
+    left: 55%; /* Modifié pour ne pas être aligné */
+    animation-delay: 2s; /* Modifié pour des délais différents */
+}
+
+.letter:nth-child(4) {
+    left: 70%; /* Modifié pour ne pas être aligné */
+    animation-delay: 3s; /* Modifié pour des délais différents */
+}
+
+.letter:nth-child(5) {
+    left: 85%; /* Modifié pour ne pas être aligné */
+    animation-delay: 4s; /* Modifié pour des délais différents */
+}
 
         /* Styles pour la timeline */
         .timeline {
