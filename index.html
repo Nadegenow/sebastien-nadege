@@ -86,16 +86,16 @@
             animation: drawHeart 2s linear infinite;
         }
            
-@import url('https://fonts.cdnfonts.com/css/about');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&display=swap');
 
 /* Animation des lettres A M O R E */
 @keyframes fly {
     0% {
-        transform: translate(0, 100px) rotate(0deg); /* Départ plus bas */
+        transform: translate(0, 100vh) rotate(0deg); /* Départ depuis le bas de la page */
         opacity: 1;
     }
     100% {
-        transform: translate(100px, -100px) rotate(360deg); /* Moins haut */
+        transform: translate(100px, -100px) rotate(360deg); /* Monte en haut */
         opacity: 0;
     }
 }
@@ -103,11 +103,11 @@
 .letter {
     display: inline-block;
     font-size: 40px;
-    font-weight: 700;
+    font-weight: 500;
     position: absolute;
-    top: 100px; /* Ajusté pour être plus bas */
+    bottom: 0; /* Départ depuis le bas */
     animation: fly 5s ease-in-out infinite; /* Animation plus lente */
-    font-family: 'About', sans-serif;
+    font-family: 'Dancing Script', cursive;
 }
 
 .letter:nth-child(1) {
