@@ -86,7 +86,7 @@
             animation: drawHeart 2s linear infinite;
         }
            
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
 
 /* Animation des lettres A M O R E */
 @keyframes fly {
@@ -95,7 +95,7 @@
         opacity: 1;
     }
     100% {
-        transform: translate(100px, -300px) rotate(360deg);
+        transform: translate(100px, -200px) rotate(360deg); /* Moins haut */
         opacity: 0;
     }
 }
@@ -105,9 +105,9 @@
     font-size: 40px;
     font-weight: 700;
     position: absolute;
-    top: 0;
+    top: 20px; /* Ajusté pour être moins haut */
     animation: fly 5s ease-in-out infinite; /* Animation plus lente */
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .letter:nth-child(1) {
